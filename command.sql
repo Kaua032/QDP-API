@@ -1,0 +1,1 @@
+CREATE DATABASE db_quinta_do_ypua;
