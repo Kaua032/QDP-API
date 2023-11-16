@@ -3,12 +3,14 @@ const exphbs = require("express-handlebars");
 const session = require("express-session"); //Criar a sessão do usuário na aplicação
 const FileStore = require("session-file-store")(session); //Salvar as sessões na pasta session
 const flash = require("express-flash");
-// const router = require("./routes/index.js");
+const router = require("./routes/index.js");
 const db = require("./database/index.js");
 
 const app = express();
 
 const PORT = 2000;
+
+const Room = require("./models/Room.js")
 
 const hbs = exphbs.create({
   partialsDir: ["views/partials"],
@@ -50,7 +52,7 @@ app.use((request, response, next) => {
   next();
 });
 
-// app.use(router);
+app.use(router);
 
 db.sync({ force: true })
   .then(() => {
