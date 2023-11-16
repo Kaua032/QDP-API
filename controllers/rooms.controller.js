@@ -7,4 +7,7 @@ const AllRoomsController = async (req, res) => {
   return res.send({ rooms });
 };
 
+const AddReserveController = async (req, res) => {
+}
+
 module.exports = { AllRoomsController };

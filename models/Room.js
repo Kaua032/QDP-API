@@ -18,6 +18,10 @@ const Room = db.define("Room", {
     allowNull: false,
     require: true,
   },
+  busy: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  }
 });
 
 module.exports = Room;
