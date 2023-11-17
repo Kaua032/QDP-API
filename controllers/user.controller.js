@@ -8,7 +8,7 @@ const FindUserController = async (req, res) => {
   console.log(user);
 
   if (user && bcrypt.compareSync(password, user.password)) {
-    return res.send({ user });
+   return res.render("mapReserves")
   }
 };
 
