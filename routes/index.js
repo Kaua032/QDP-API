@@ -5,6 +5,7 @@ const router = Router();
 
 router.use("/hotel", RoomsRouter);
 router.use("/user", UserRouter);
+router.get("/", PageLoginController)
 
 
 module.exports = router;

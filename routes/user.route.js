@@ -5,7 +5,7 @@ const {
 } = require("../controllers/user.controller");
 const UserRouter = Router();
 
+UserRouter.get("/login", FindUserController);
 UserRouter.post("/register", AddUserController);
-UserRouter.get("login", FindUserController);
 
 module.exports = UserRouter;

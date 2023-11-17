@@ -12,12 +12,16 @@ const FindUserController = async (req, res) => {
   }
 };
 
-const AddUserController = async (req, res) => {
-  const { username, email, password } = req.body;
+  const AddUserController = async (req, res) => {
+    const { username, email, password } = req.body;
 
-  const userCreated = User.create({ username, email, password });
+    const userCreated = User.create({ username, email, password });
 
-  return res.send({ userCreated });
-};
+    req.session.userId = userCreated.dataValues.id;
+
+    const userFindid = userCreated.dataValues;
+
+    res.render("mapReserves", )
+  };
 
 module.exports = { FindUserController, AddUserController };
