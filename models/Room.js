@@ -4,12 +4,12 @@ const db = require("../config/conn.js");
 
 const Room = db.define("Room", {
   number: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false,
     require: true,
   },
   floor: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false,
     require: true,
   },
@@ -21,7 +21,7 @@ const Room = db.define("Room", {
   busy: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
-  }
+  },
 });
 
 module.exports = Room;
