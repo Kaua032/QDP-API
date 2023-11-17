@@ -17,7 +17,7 @@ const AddRoomController = async (req, res) => {
 };
 
 const AllReservesController = async (req, res) => {
-  const reserves = Reserve.findAll();
+  const reserves = await Reserve.findAll();
 
   res.send({ reserves });
 };
