@@ -16,6 +16,12 @@ const AddRoomController = async (req, res) => {
   return res.send({ createdRoom });
 };
 
+const AllReservesController = async (req, res) => {
+  const reserves = Reserve.findAll();
+
+  res.send({ reserves });
+};
+
 const AddReserveController = async (req, res) => {
   const { id } = req.params;
   const {
@@ -48,4 +54,5 @@ module.exports = {
   AllRoomsController,
   AddReserveController,
   AddRoomController,
+  AllReservesController,
 };
