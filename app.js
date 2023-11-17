@@ -54,7 +54,7 @@ app.use((request, response, next) => {
 
 app.use(router);
 
-db.sync({ force: true })
+db.sync()
   .then(() => {
     app.listen(PORT, () => console.log(`SERVER ON 🟢 ${PORT}`));
   })
