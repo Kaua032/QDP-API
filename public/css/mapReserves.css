@@ -17,7 +17,6 @@ body {
   width: 16%;
   background-color: #fff;
   height: 100%;
-  position: fixed;
 }
 
 .title {
@@ -88,15 +87,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 84%;
+  width: 1100px;
+  margin: auto;
 }
 
 .caixa_quartos {
+  display: flex;
+  justify-content: center;
   border-radius: 10px;
   padding: 20px 20px 20px 20px;
   background-color: #fff;
-  width: 1100px;
-  min-height: 88%;
   -webkit-box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
   box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
@@ -135,7 +135,6 @@ body {
   width: 250px;
   height: 100px;
   border-radius: 10px;
-  padding-left: 4px;
   color: #fff;
   margin: 0px;
   display: flex;
@@ -150,6 +149,7 @@ body {
   border: transparent;
   font-size: 100px;
   color: #fff;
+  cursor: pointer;
 }
 
 .modal_bg {
@@ -233,8 +233,15 @@ body {
   width: 50%;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .caixa_esquerda {
   height: 100%;
+}
+
+@media (max-width: 1500px) {
+  .lado_direito{
+    width: 830px;
+  }
 }

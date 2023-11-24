@@ -22,4 +22,18 @@ const AddUserController = async (req, res) => {
   res.redirect("/");
 };
 
-module.exports = { FindUserController, AddUserController };
+const SingOutUserController = async (req, res) => {
+  req.session.destroy(function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+
+  return res.redirect("/");
+};
+
+module.exports = {
+  FindUserController,
+  AddUserController,
+  SingOutUserController,
+};
