@@ -19,9 +19,8 @@ const FindUserController = async (req, res) => {
 
     req.session.userId = userCreated.dataValues.id;
 
-    const userFindid = userCreated.dataValues;
 
-    res.render("mapReserves", )
+    res.render("mapReserves")
   };
 
 module.exports = { FindUserController, AddUserController };

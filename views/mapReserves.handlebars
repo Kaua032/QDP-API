@@ -1,0 +1,63 @@
+
+<body>
+    <div class="main">
+        <div class="lado_esquerdo">
+            <div class="title">
+                <p>Zen<span>Hosty</span></p>
+            </div>
+            <div class="caixa_esquerda">
+                <div class="check_roon">
+                    <a class="check_a" href="./checkOut.handlebars">
+                        <div class="checkouts">
+                            <img src="../public/images/checkout.png" alt="">
+                            <p>Checkouts</p>
+                        </div>
+                    </a>
+                    <div class="MapRoon">
+                        <img src="../public/images/map.png" alt="">
+                        <p>Mapa Quartos</p>
+                    </div>
+                </div>
+                <div class="perfil">
+                    <img src="../public/images/Layer_1.png" alt="">
+                    <p>Vitor Samuel</p>
+                    <a href="./login.handlebars"><img src="../public/images/Layer 2.png" alt=""></a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="lado_direito">
+            <div class="caixa_quartos">
+                <div id="caixa_quartos">
+                    <div class="quarto">
+                        <p>Número: 01</p>
+                        <p>Andar: 1°</p>
+                        <p class="estado">Estado: <span>Desocupado</span></p>
+                    </div>
+                    <div class="botao_add" id="modal_open">
+                        <button>+</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="modal_bg" id="modal_bg" style="display: none;">
+        <section class="modal_container">
+            <h2>Adicionar novo quarto</h2>
+            <form class="form">
+                <p>Nome do cliente:</p>
+                <input class="formulario" type="text" placeholder="Nome">
+                <p>Número de telefone:</p>
+                <input class="formulario" type="number" placeholder="(00) 00 0-0000-0000">
+                <p>CPF:</p>
+                <input class="formulario" type="number" placeholder="000.000.000-00">
+                <div class="butoes">
+                    <button class="cancelar" id="cancelar">Cancelar</button>
+                    <input class="criar" type="submit" value="Criar"></input>
+                </div>
+            </form>
+        </section>
+    </section>
+</body>
