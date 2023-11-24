@@ -2,8 +2,8 @@ const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize(
   "db_quinta_do_ypua",
-  "aluno_medio",
-  "@lunoSenai23.",
+  "root",
+  "88124927kaua",
   {
     host: "localhost",
     dialect: "mysql",

@@ -1,25 +1,40 @@
 <body>
-    <div class="main">
-    
-        <div class="lado_esquerdo">
-            <div class="image">
-                <img src="../public/images/Logo (1).png" alt="">
-            </div>
-        </div>
-    
-        <div class="lado_direito">
-            <div class="caixa_formulario">
-                <h1>Register</h1>
-                <form class="form" action="POST">
-                    <div class="email_senha">
-                        <input class="nome" type="text" placeholder="Nome">
-                        <input class="email" type="email" placeholder="Email">
-                        <input class="password" type="password" placeholder="Senha">
-                    </div>
-                    <p>Já possui uma conta? <a href="./login.handlebars">Entrar</a></p>
-                    <a href="./mapReserves.handlebars"><button  class="entrar" type="button"> Cadastrar</button></a>
-                </form>
-            </div>
-        </div>
+  <div class="main">
+
+    <div class="lado_esquerdo_register">
+      <div class="image">
+        <img src="/images/Logo (1).png" alt="" />
+      </div>
     </div>
+
+    <div class="lado_direito_register">
+      <div class="caixa_formulario">
+        <h1>Register</h1>
+        <form class="form" action="/user/register" method="POST">
+          <div class="email_senha">
+            <input
+              name="username"
+              class="nome"
+              type="text"
+              placeholder="Nome"
+            />
+            <input
+              name="email"
+              class="email"
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              name="password"
+              class="password"
+              type="password"
+              placeholder="Senha"
+            />
+          </div>
+          <p>Já possui uma conta? <a href="/">Entrar</a></p>
+          <input class="entrar_register" type="submit" value="Cadastrar" />
+        </form>
+      </div>
+    </div>
+  </div>
 </body>

@@ -1,26 +1,27 @@
 const User = require("../models/User.js");
+const bcrypt = require("bcryptjs");
 
 const FindUserController = async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ where: { email } });
 
-  console.log(user);
-
   if (user && bcrypt.compareSync(password, user.password)) {
-   return res.render("mapReserves")
+    req.session.userId = user.dataValues.id;
+    return res.redirect("/");
   }
 };
 
-  const AddUserController = async (req, res) => {
-    const { username, email, password } = req.body;
+const AddUserController = async (req, res) => {
+  const { username, email, password } = req.body;
 
-    const userCreated = User.create({ username, email, password });
+  const userCreated = await User.create({ username, email, password });
 
-    req.session.userId = userCreated.dataValues.id;
+  console.log(userCreated);
 
+  req.session.userId = userCreated.dataValues.id;
 
-    res.render("mapReserves")
-  };
+  res.redirect("/");
+};
 
 module.exports = { FindUserController, AddUserController };

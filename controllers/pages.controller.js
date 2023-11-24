@@ -1,13 +1,22 @@
-const Reserve = require("../models/Reserve.js");
+const Room = require("../models/Room.js");
+const User = require("../models/User.js");
 
 const PageLoginController = async (req, res) => {
   if (req.session.userId) {
-    const reserves = Reserve.findAll();
+    const rooms = await Room.findAll();
+    const id = req.session.userId;
+    const user = await User.findOne({ where: { id } });
+    const userFindid = user.dataValues;
+    console.log(userFindid);
 
-    res.render("mapReserves", { reserves });
+    res.render("mapReserves", { rooms, userFindid });
   } else {
     res.render("login");
   }
 };
 
-module.exports = { PageLoginController };
+const PageRegisterController = async (req, res) => {
+  res.render("register");
+};
+
+module.exports = { PageLoginController, PageRegisterController };
