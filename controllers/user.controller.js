@@ -17,8 +17,6 @@ const AddUserController = async (req, res) => {
 
   const userCreated = await User.create({ username, email, password });
 
-  console.log(userCreated);
-
   req.session.userId = userCreated.dataValues.id;
 
   res.redirect("/");

@@ -21,11 +21,9 @@
                 <div class="perfil">
                     <img src="../public/images/Layer_1.png" alt="">
                     <p>{{userFindid.username}}</p>
-                    <a href="./login.handlebars"><img src="../public/images/Layer 2.png" alt=""></a>
+                    <a href="./login.handlebars"><img src="/images/Layer 2.png" alt=""></a>
                 </div>
             </div>
-
-
         </div>
         <div class="lado_direito">
             <div class="caixa_quartos">
@@ -48,13 +46,13 @@
     <section class="modal_bg" id="modal_bg" style="display: none;">
         <section class="modal_container">
             <h2>Adicionar novo quarto</h2>
-            <form class="form">
-                <p>Nome do cliente:</p>
-                <input class="formulario" type="text" placeholder="Nome">
-                <p>Número de telefone:</p>
-                <input class="formulario" type="number" placeholder="(00) 00 0-0000-0000">
-                <p>CPF:</p>
-                <input class="formulario" type="number" placeholder="000.000.000-00">
+            <form class="form"  action="/hotel/rooms" method="POST">
+                <p>Número:</p>
+                <input name="number" class="formulario" type="text">
+                <p>Andar do Quarto:</p>
+                <input name="floor" class="formulario" type="number" >
+                <p>Preço:</p>
+                <input name="price" class="formulario" type="number">
                 <div class="butoes">
                     <button class="cancelar" id="cancelar">Cancelar</button>
                     <input class="criar" type="submit" value="Criar"></input>

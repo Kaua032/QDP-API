@@ -16,6 +16,8 @@ body {
 .lado_esquerdo {
   width: 16%;
   background-color: #fff;
+  height: 100%;
+  position: fixed;
 }
 
 .title {
@@ -79,7 +81,7 @@ body {
   font-family: Poppins;
   font-size: 18px;
   gap: 26px;
-  padding-top: 600px;
+  margin-top: auto;
 }
 
 .lado_direito {
@@ -233,4 +235,8 @@ body {
   width: 50%;
   border: none;
   border-radius: 5px;
+}
+
+.caixa_esquerda {
+  height: 100%;
 }

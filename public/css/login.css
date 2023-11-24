@@ -48,7 +48,7 @@ body {
   justify-content: center;
 }
 
-.form {
+.form_login {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,7 +105,7 @@ body {
   font-size: 16px;
 }
 
-.form p {
+.form_login p {
   display: flex;
   text-align: center;
   color: #686868;
@@ -114,7 +114,7 @@ body {
   font-weight: 500;
 }
 
-.form a {
+.form_login a {
   color: #10768d;
   text-decoration: none;
 }

@@ -40,13 +40,13 @@ body {
   align-items: center;
   justify-content: center;
 }
-.form {
+.form_register {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.form p {
+.form_register p {
   display: flex;
   text-align: center;
   color: #686868;
@@ -54,8 +54,9 @@ body {
   font-size: 14px;
   font-weight: 500;
 }
-.form a {
+.form_register a {
   text-decoration: none;
+  color: #10768d;
 }
 .email_senha {
   display: flex;
@@ -121,17 +122,6 @@ body {
   font-family: Poppins;
   font-weight: 400;
   font-size: 16px;
-}
-.form p {
-  display: flex;
-  text-align: center;
-  color: #686868;
-  font-family: Poppins;
-  font-size: 12px;
-  font-weight: 500;
-}
-.form a {
-  color: #10768d;
 }
 .entrar_register {
   width: 350px;
