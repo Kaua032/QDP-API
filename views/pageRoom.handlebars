@@ -30,14 +30,24 @@
       </div>
       <div>
         <label for="checkin">Checkin:</label>
-        <input type="date" name="checkin" id="checkin" />
+        <input
+          type="date"
+          name="checkin"
+          id="checkin"
+          onchange="calculator()"
+        />
       </div>
       <div>
         <label for="checkout">Checkout:</label>
-        <input type="date" name="checkout" id="checkout" />
+        <input
+          type="date"
+          name="checkout"
+          id="checkout"
+          onchange="calculator()"
+        />
       </div>
       <div>
-        <p>Dias total: <strong>0</strong></p>
+        <p>Dias total: <strong id="totalDays">0</strong></p>
       </div>
       <div>
         <p>Preço total: R$<strong id="totalPrice">0</strong></p>
