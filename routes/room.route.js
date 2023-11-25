@@ -11,6 +11,6 @@ RoomsRouter.get("/rooms", AllRoomsController);
 RoomsRouter.post("/rooms", AddRoomController);
 
 RoomsRouter.get("/reserves", AllReservesController);
-RoomsRouter.post("/reserve/:id", AddReserveController);
+RoomsRouter.post("/reserve", AddReserveController);
 
 module.exports = RoomsRouter;

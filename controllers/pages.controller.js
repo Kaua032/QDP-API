@@ -7,7 +7,7 @@ const PageLoginController = async (req, res) => {
     const id = req.session.userId;
     const user = await User.findOne({ where: { id } });
     const userFindid = user.dataValues;
-
+   
     res.render("mapReserves", { rooms, userFindid });
   } else {
     res.render("login");

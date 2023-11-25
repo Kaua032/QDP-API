@@ -6,7 +6,7 @@ const FindUserController = async (req, res) => {
 
   const user = await User.findOne({ where: { email } });
 
-  if (user && bcrypt.compareSync(password, user.password)) {
+  if (user && bcrypt.compareSync(password, user.dataValues.password)) {
     req.session.userId = user.dataValues.id;
     return res.redirect("/");
   }

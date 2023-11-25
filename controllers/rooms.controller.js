@@ -22,7 +22,6 @@ const AllReservesController = async (req, res) => {
 };
 
 const AddReserveController = async (req, res) => {
-  const { id } = req.params;
   const {
     name,
     cpf,
@@ -44,7 +43,7 @@ const AddReserveController = async (req, res) => {
     checkout,
     totalPrice,
   });
-  const room = await Room.update({ busy: 1 }, { where: { id } });
+  const room = await Room.update({ busy: 1 }, { where: { number } });
 
   return res.send({ room });
 };

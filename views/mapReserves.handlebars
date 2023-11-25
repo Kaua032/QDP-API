@@ -33,6 +33,7 @@
             <button class="quarto" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
               <p>Número: {{this.dataValues.number}}</p>
               <p>Andar: {{this.dataValues.floor}}°</p>
+              <p>Preço por noite: R${{this.dataValues.price}}</p>
               <p class="estado">Estado: <span>Desocupado</span></p>
             </button>
           {{/each}}
@@ -52,7 +53,7 @@
         <input name="number" class="formulario" type="text" />
         <p>Andar do Quarto:</p>
         <input name="floor" class="formulario" type="number" />
-        <p>Preço:</p>
+        <p>Preço por noite:</p>
         <input name="price" class="formulario" type="number" />
         <div class="butoes">
           <button type="button" class="cancelar" id="cancelar">Cancelar</button>
@@ -61,4 +62,5 @@
       </form>
     </section>
   </section>
+  
 </body>
