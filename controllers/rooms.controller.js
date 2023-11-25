@@ -12,7 +12,7 @@ const AddRoomController = async (req, res) => {
 
   const createdRoom = await Room.create({ number, floor, price });
 
-  return res.redirect('/');
+  return res.redirect("/");
 };
 
 const AllReservesController = async (req, res) => {

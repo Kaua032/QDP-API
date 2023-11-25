@@ -30,11 +30,11 @@
       <div class="caixa_quartos">
         <div id="caixa_quartos">
           {{#each rooms}}
-            <div class="quarto">
+            <button class="quarto" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
               <p>Número: {{this.dataValues.number}}</p>
               <p>Andar: {{this.dataValues.floor}}°</p>
               <p class="estado">Estado: <span>Desocupado</span></p>
-            </div>
+            </button>
           {{/each}}
           <div class="botao_add" id="modal_open">
             <button>+</button>
@@ -45,7 +45,7 @@
     </div>
   </div>
   <section class="modal_bg" id="modal_bg" style="display: none;">
-    <section class="modal_container">
+    <section class="modal_container" id="modal_container">
       <h2>Adicionar novo quarto</h2>
       <form class="form" action="/hotel/rooms" method="POST">
         <p>Número:</p>

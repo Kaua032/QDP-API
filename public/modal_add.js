@@ -10,3 +10,10 @@ modal_open.addEventListener("click", () => {
 modal_close.addEventListener("click", () => {
     modal_bg.style.display = 'none';
 })
+
+window.onclick = function(e) {
+
+    if(e.target == modal_bg){
+        modal_bg.style.display = 'none';
+    }
+}
