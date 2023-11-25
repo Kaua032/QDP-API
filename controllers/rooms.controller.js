@@ -22,6 +22,7 @@ const AllReservesController = async (req, res) => {
 };
 
 const AddReserveController = async (req, res) => {
+  const { id } = req.params;
   const {
     name,
     cpf,
@@ -43,9 +44,17 @@ const AddReserveController = async (req, res) => {
     checkout,
     totalPrice,
   });
-  const room = await Room.update({ busy: 1 }, { where: { number } });
+  const room = await Room.update({ busy: 1 }, { where: { id } });
 
-  return res.send({ room });
+  res.redirect("/");
+};
+
+const OpenRoomToReserverController = async (req, res) => {
+  const { id } = req.params;
+
+  const roomFindid = await Room.findOne({ where: { id } });
+
+  res.render("pageRoom", { roomFindid });
 };
 
 module.exports = {
@@ -53,4 +62,5 @@ module.exports = {
   AddReserveController,
   AddRoomController,
   AllReservesController,
+  OpenRoomToReserverController,
 };

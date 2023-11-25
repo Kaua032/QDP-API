@@ -21,7 +21,7 @@
           <img src="./images/Layer_1.png" alt="" />
           <p>{{userFindid.username}}</p>
           <form action="/user/singout" method="POST">
-            <input type="submit">
+            <input type="submit" />
           </form>
         </div>
       </div>
@@ -30,12 +30,14 @@
       <div class="caixa_quartos">
         <div id="caixa_quartos">
           {{#each rooms}}
-            <button class="quarto" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-              <p>Número: {{this.dataValues.number}}</p>
-              <p>Andar: {{this.dataValues.floor}}°</p>
-              <p>Preço por noite: R${{this.dataValues.price}}</p>
-              <p class="estado">Estado: <span>Desocupado</span></p>
-            </button>
+            <form action="/hotel/reservepage/{{this.dataValues.id}}" method="GET">
+              <button class="quarto" type="submit"s>
+                <p>Número: {{this.dataValues.number}}</p>
+                <p>Andar: {{this.dataValues.floor}}°</p>
+                <p>Preço por noite: R${{this.dataValues.price}}</p>
+                <p class="estado">Estado: <span>Desocupado</span></p>
+              </button>
+            </form>
           {{/each}}
           <div class="botao_add" id="modal_open">
             <button>+</button>
@@ -62,5 +64,5 @@
       </form>
     </section>
   </section>
-  
+
 </body>
