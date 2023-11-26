@@ -7,7 +7,7 @@ const PageLoginController = async (req, res) => {
     const id = req.session.userId;
     const user = await User.findOne({ where: { id } });
     const userFindid = user.dataValues;
-   
+
     res.render("mapReserves", { rooms, userFindid });
   } else {
     res.render("login");
@@ -18,4 +18,12 @@ const PageRegisterController = async (req, res) => {
   res.render("register");
 };
 
-module.exports = { PageLoginController, PageRegisterController };
+const PageShowCheckoutsController = async (req, res) => {
+  res.render("checkOut");
+};
+
+module.exports = {
+  PageLoginController,
+  PageRegisterController,
+  PageShowCheckoutsController,
+};

@@ -68,7 +68,7 @@ body {
 
 .check_roon {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 }
 
@@ -242,7 +242,7 @@ body {
 }
 
 @media (max-width: 1500px) {
-  .lado_direito{
+  .lado_direito {
     width: 830px;
   }
 }
