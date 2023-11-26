@@ -18,12 +18,11 @@
           </a>
         </div>
         <div class="perfil">
-          <img src="../public/images/Layer_1.png" alt="" />
-          <p>Vitor Samuel</p>
-          <a href="./login.handlebars"><img
-              src="../public/images/Layer 2.png"
-              alt=""
-            /></a>
+          <img src="./images/Layer_1.png" alt="" />
+          <p>{{userFindid.username}}</p>
+          <form action="/user/singout" method="POST">
+            <input id="singout" type="submit" value="" />
+          </form>
         </div>
       </div>
 
@@ -47,7 +46,7 @@
             <p>{{this.dataValues.cpf}}</p>
             <p>{{this.dataValues.numberPhone}}</p>
             <p>{{this.dataValues.number}}</p>
-            <p>{{this.dataValues.floor}}</p>
+            <p>{{this.dataValues.floor}}º andar</p>
             <p>{{this.dataValues.checkin}}</p>
             <p>{{this.dataValues.checkout}}</p>
             <p>{{this.dataValues.totalPrice}}</p>
