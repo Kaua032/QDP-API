@@ -30,12 +30,21 @@
       <div class="caixa_quartos">
         <div id="caixa_quartos">
           {{#each rooms}}
-            <form action="/hotel/reservepage/{{this.dataValues.id}}" method="GET">
-              <button class="quarto" type="submit"s>
+            <form
+              action="/hotel/reservepage/{{this.dataValues.id}}"
+              method="GET"
+            >
+              <button class="quarto" type="submit" s>
                 <p>Número: {{this.dataValues.number}}</p>
                 <p>Andar: {{this.dataValues.floor}}°</p>
                 <p>Preço por noite: R${{this.dataValues.price}}</p>
-                <p class="estado">Estado: <span>Desocupado</span></p>
+                <p class="estado">Estado:
+                  {{#if this.dataValues.busy}}
+                    <span class="ocupado">Ocupado</span>
+                  {{else}}
+                    <span class="desocupado">Desocupado</span>
+                  {{/if}}
+                </p>
               </button>
             </form>
           {{/each}}

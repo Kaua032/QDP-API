@@ -126,8 +126,11 @@ body {
   margin: 2px;
 }
 
-.quarto span {
+.desocupado {
   color: #5aff3f;
+}
+.ocupado {
+  color: #f00;
 }
 
 .botao_add {
