@@ -1,5 +1,6 @@
 const Room = require("../models/Room.js");
 const User = require("../models/User.js");
+const Reserve = require("../models/Reserve.js");
 
 const PageLoginController = async (req, res) => {
   if (req.session.userId) {
@@ -19,7 +20,9 @@ const PageRegisterController = async (req, res) => {
 };
 
 const PageShowCheckoutsController = async (req, res) => {
-  res.render("checkOut");
+  const reserves = await Reserve.findAll();
+
+  res.render("checkOut", { reserves });
 };
 
 module.exports = {

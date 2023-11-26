@@ -23,16 +23,12 @@ const AllReservesController = async (req, res) => {
 
 const AddReserveController = async (req, res) => {
   const { id } = req.params;
-  const {
-    name,
-    cpf,
-    numberPhone,
-    number,
-    floor,
-    checkin,
-    checkout,
-    totalPrice,
-  } = req.body;
+  const { name, cpf, numberPhone, checkin, checkout, totalPrice } = req.body;
+
+  const infoRoom = await Room.findOne({ where: { id } });
+
+  const number = infoRoom.dataValues.number
+  const floor = infoRoom.dataValues.floor
 
   const createdReserve = await Reserve.create({
     name,

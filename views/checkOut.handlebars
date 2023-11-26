@@ -1,52 +1,60 @@
 <body>
-    <div class="main">
-        <div class="lado_esquerdo">
-            <div class="title">
-                <p>Zen<span>Hosty</span></p>
+  <div class="main_checkout">
+    <div class="lado_esquerdo_checkout">
+      <div class="title">
+        <p>Zen<span>Hosty</span></p>
+      </div>
+      <div class="caixa_esquerda">
+        <div class="check_roon">
+          <div class="checkouts_checkout">
+            <img src="../images/check_branco.png" alt="" />
+            <p>Checkouts</p>
+          </div>
+          <a class="mapRoon_a" href="/">
+            <div class="MapRoon_checkout">
+              <img src="../images/map_cinza.png" alt="" />
+              <p>Mapa Quartos</p>
             </div>
-            <div class="caixa_esquerda">
-                <div class="check_roon">
-                    <div class="checkouts">
-                        <img src="../public/images/check_branco.png" alt="">
-                        <p>Checkouts</p>
-                    </div>
-                    <a class="mapRoon_a" href="./mapReserves.handlebars">
-                        <div class="MapRoon">
-                            <img src="../public/images/map_cinza.png" alt="">
-                            <p>Mapa Quartos</p>
-                        </div>
-                    </a>
-                </div>
-                    <div class="perfil">
-                        <img src="../public/images/Layer_1.png" alt="">
-                        <p>Vitor Samuel</p>
-                        <a href="./login.handlebars"><img src="../public/images/Layer 2.png" alt=""></a>
-                    </div>
-            </div>
-            
-            
+          </a>
         </div>
-        <div class="lado_direito">
-            <div class="caixa_check">
-                <div class="caracteristicas_check">
-                    <span>Nome</span>
-                    <p>CPF</p>
-                    <p>N°Quarto</p>
-                    <p>Andar</p>
-                    <p>Checkin</p>
-                    <p>Preço</p>
-                </div>
-                <hr id="hr">
-                <div class="informacoes_check">
-                    <span>Vitor Samuel Melo Nascimento</span>
-                    <p>111.222.333.44</p>
-                    <p>740</p>
-                    <p>1°</p>
-                    <p>10/10/10</p>
-                    <p>R$1000,00</p>
-                </div>
-                <hr id="hr">
-            </div>
+        <div class="perfil">
+          <img src="../public/images/Layer_1.png" alt="" />
+          <p>Vitor Samuel</p>
+          <a href="./login.handlebars"><img
+              src="../public/images/Layer 2.png"
+              alt=""
+            /></a>
         </div>
+      </div>
+
     </div>
+    <div class="lado_direito_checkout">
+      <div class="caixa_check">
+        <div class="caracteristicas_check">
+          <span>Nome</span>
+          <p>CPF</p>
+          <p>Telefone</p>
+          <p>N°Quarto</p>
+          <p>Andar</p>
+          <p>Checkin</p>
+          <p>Checkout</p>
+          <p>Preço</p>
+        </div>
+        <hr id="hr" />
+        {{#each reserves}}
+          <div class="informacoes_check">
+            <span>{{this.dataValues.name}}</span>
+            <p>{{this.dataValues.cpf}}</p>
+            <p>{{this.dataValues.numberPhone}}</p>
+            <p>{{this.dataValues.number}}</p>
+            <p>{{this.dataValues.floor}}</p>
+            <p>{{this.dataValues.checkin}}</p>
+            <p>{{this.dataValues.checkout}}</p>
+            <p>{{this.dataValues.totalPrice}}</p>
+          </div>
+          <hr id="hr" />
+        {{/each}}
+      </div>
+    </div>
+  </div>
 </body>

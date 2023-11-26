@@ -5,13 +5,13 @@ body {
   box-sizing: border-box;
   font-family: Poppins;
 }
-.main {
+.main_checkout {
   height: 100%;
   width: 100%;
   display: flex;
   background-image: url("../images/Background.png");
 }
-.lado_esquerdo {
+.lado_esquerdo_checkout {
   width: 16%;
   background-color: #fff;
 }
@@ -29,7 +29,7 @@ body {
 .title span {
   color: #585858;
 }
-.checkouts {
+.checkouts_checkout {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +45,7 @@ body {
 .mapRoon_a {
   text-decoration: none;
 }
-.MapRoon {
+.MapRoon_checkout {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,11 +55,12 @@ body {
   font-family: Poppins;
   margin-left: 10px;
   gap: 12px;
+  background-color: white;
 }
 
 .check_roon {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 }
 .perfil {
@@ -72,7 +73,7 @@ body {
   gap: 26px;
   margin-top: auto;
 }
-.lado_direito {
+.lado_direito_checkout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +86,7 @@ body {
   border-radius: 10px;
   background-color: #fff;
   width: 95%;
-  height: 88%;
+  padding: 15px;
   -webkit-box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
   box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
@@ -103,7 +104,7 @@ body {
   align-items: center;
   height: 7%;
   justify-content: space-around;
-  gap: 140px;
+  gap: 20px;
   font-size: 15px;
 }
 .caracteristicas_check span {
@@ -112,12 +113,12 @@ body {
 .informacoes_check {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   font-size: 12px;
-  gap: 180px;
-  padding-left: 30px;
+  gap: 20px;
 }
 .informacoes_check p {
+  text-align: center;
   width: 12%;
 }
 .informacoes_check span {
