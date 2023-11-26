@@ -26,6 +26,7 @@ body {
   font-size: 40px;
   font-weight: 500;
   font-family: Poppins;
+  height: 10%;
 }
 
 .title p {
@@ -79,7 +80,11 @@ body {
   text-align: center;
   font-family: Poppins;
   font-size: 18px;
-  margin-top: auto;
+  justify-self: flex-end;
+  height: 70px;
+}
+.perfil p {
+  text-align: center;
 }
 
 .lado_direito {
@@ -242,6 +247,16 @@ body {
 .caixa_esquerda {
   display: flex;
   flex-direction: column;
+  height: 90%;
+}
+
+#singout {
+  background-image: url("../images/Layer\ 2.png");
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #fff;
 }
 
 @media (max-width: 1500px) {
