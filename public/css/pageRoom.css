@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+#back {
+  text-decoration: none;
+  color: #585858;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+header a img {
+  height: 80px;
+  margin-right: auto;
+}
+main {
+  width: 850px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 25px;
+  margin: auto;
+}
+
+main h1 {
+  background: linear-gradient(309deg, #19a3a6 0%, #03355a 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+main form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+main form div {
+  display: flex;
+  flex-direction: column;
+}
+main form div input {
+  width: 340px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #585858;
+  padding-left: 10px;
+}
+#div_diasTotal {
+  width: 340px;
+}
+
+#submit {
+  border-radius: 5px;
+  background: #19a3a6;
+  color: #fff;
+  border: none;
+}
