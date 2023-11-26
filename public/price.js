@@ -12,6 +12,6 @@ function calculator() {
     const diffDays = diff / (1000 * 3600 * 24);
 
     totalDays.textContent = `${diffDays}`;
-    totalPrice.textContent = `${roomPricePerNight.value * diffDays}`;
+    totalPrice.value = roomPricePerNight.value * diffDays;
   }
 }
