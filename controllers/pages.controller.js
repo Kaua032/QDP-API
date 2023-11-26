@@ -35,12 +35,16 @@ const PageRegisterController = async (req, res) => {
 };
 
 const PageShowCheckoutsController = async (req, res) => {
-  const reserves = await Reserve.findAll();
-  const id = req.session.userId;
-  const user = await User.findOne({ where: { id } });
-  const userFindid = user.dataValues;
+  if (req.session.userId) {
+    const reserves = await Reserve.findAll();
+    const id = req.session.userId;
+    const user = await User.findOne({ where: { id } });
+    const userFindid = user.dataValues;
 
-  res.render("checkOut", { reserves, userFindid });
+    res.render("checkOut", { reserves, userFindid });
+  } else {
+    res.redirect("/");
+  }
 };
 
 module.exports = {
