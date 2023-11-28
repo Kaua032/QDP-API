@@ -36,10 +36,22 @@ const PageRegisterController = async (req, res) => {
 
 const PageShowCheckoutsController = async (req, res) => {
   if (req.session.userId) {
-    const reserves = await Reserve.findAll();
+    let reserves = await Reserve.findAll();
     const id = req.session.userId;
     const user = await User.findOne({ where: { id } });
     const userFindid = user.dataValues;
+
+    reserves = reserves.map((reserve) => {
+      const checkin = new Date(reserve.dataValues.checkin);
+      const checkout = new Date(reserve.dataValues.checkout);
+      reserve.dataValues.checkin = `${checkin.getDate()}/${
+        checkin.getMonth() + 1
+      }/${checkin.getFullYear()} ${checkin.getHours()}:${checkin.getMinutes()}`;
+      reserve.dataValues.checkout = `${checkout.getDate()}/${
+        checkout.getMonth() + 1
+      }/${checkout.getFullYear()} ${checkout.getHours()}:${checkout.getMinutes()}`;
+      return reserve;
+    });
 
     res.render("checkOut", { reserves, userFindid });
   } else {

@@ -1,8 +1,10 @@
-body {
-  height: 100vh;
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
   font-family: Poppins;
 }
 .main_checkout {
@@ -10,10 +12,19 @@ body {
   width: 100%;
   display: flex;
   background-image: url("../images/Background.png");
+  align-items: center;
 }
 .lado_esquerdo_checkout {
   width: 16%;
+  height: 100%;
   background-color: #fff;
+}
+
+.caixa_esquerda {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
 }
 .title {
   display: flex;
@@ -22,13 +33,13 @@ body {
   font-size: 40px;
   font-weight: 500;
   font-family: Poppins;
+  height: 10%;
 }
-.title p {
-  color: #10768d;
+
+.title img {
+  height: 80px;
 }
-.title span {
-  color: #585858;
-}
+
 .checkouts_checkout {
   display: flex;
   align-items: center;
@@ -66,20 +77,18 @@ body {
 .perfil {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   font-family: Poppins;
   font-size: 18px;
-  gap: 26px;
-  margin-top: auto;
+  justify-self: flex-end;
+  height: 70px;
 }
 .lado_direito_checkout {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 84%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   max-width: 1100px;
 }
 .caixa_check {
@@ -87,8 +96,6 @@ body {
   background-color: #fff;
   width: 95%;
   padding: 15px;
-  -webkit-box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
   box-shadow: 3px 2px 4px 3px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
@@ -123,4 +130,13 @@ body {
 }
 .informacoes_check span {
   color: #19a3a6;
+}
+
+#singout {
+  background-image: url("../images/Layer\ 2.png");
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #fff;
 }
