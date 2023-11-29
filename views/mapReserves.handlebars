@@ -1,11 +1,11 @@
 <head>
-   <link rel="stylesheet" href="/css/mapReserves.css" />
+  <link rel="stylesheet" href="/css/mapReserves.css" />
 </head>
 <body>
   <div class="main">
     <div class="lado_esquerdo">
       <div class="title">
-        <img src="./images/logo2.png" alt="">
+        <img src="./images/logo2.png" alt="" />
       </div>
       <div class="caixa_esquerda">
         <div class="check_roon">
@@ -24,7 +24,7 @@
           <img src="./images/Layer_1.png" alt="" />
           <p>{{userFindid.username}}</p>
           <form action="/user/singout" method="POST">
-            <input id="singout" type="submit" value=""/>
+            <input id="singout" type="submit" value="" />
           </form>
         </div>
       </div>
@@ -33,25 +33,46 @@
       <div class="caixa_quartos">
         <div id="caixa_quartos">
           {{#each rooms}}
-            <form
-              action="/hotel/reservepage/{{this.dataValues.id}}"
-              method="GET"
-            >
-              <button class="quarto" type="submit" s>
+            {{#if this.dataValues.busy}}
+              <button
+                class="quarto"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#addReserve"
+              >
                 <p>Número: {{this.dataValues.number}}</p>
                 <p>Andar: {{this.dataValues.floor}}°</p>
                 <p>Preço por noite: R${{this.dataValues.price}}</p>
                 <p class="estado">Estado:
-                  {{#if this.dataValues.busy}}
-                    <span class="ocupado">Ocupado</span>
-                  {{else}}
-                    <span class="desocupado">Desocupado</span>
-                  {{/if}}
+                  <span class="ocupado">Ocupado</span>
                 </p>
               </button>
-            </form>
+
+            {{else}}
+              <form
+                action="/hotel/reservepage/{{this.dataValues.id}}"
+                method="GET"
+              >
+                <button class="quarto" type="submit" s>
+                  <p>Número: {{this.dataValues.number}}</p>
+                  <p>Andar: {{this.dataValues.floor}}°</p>
+                  <p>Preço por noite: R${{this.dataValues.price}}</p>
+                  <p class="estado">Estado:
+                    <span class="desocupado">Desocupado</span>
+                  </p>
+                </button>
+              </form>
+            {{/if}}
           {{/each}}
-          <div class="botao_add" id="modal_open">
+          <div
+            class="botao_add"
+            id="modal_open"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#addRoom"
+            data-bs-whatever="@mdo"
+          >
             <button>+</button>
           </div>
 
@@ -59,22 +80,93 @@
       </div>
     </div>
   </div>
-  <section class="modal_bg" id="modal_bg" style="display: none;">
-    <section class="modal_container" id="modal_container">
-      <h2>Adicionar novo quarto</h2>
-      <form class="form" action="/hotel/rooms" method="POST">
-        <p>Número:</p>
-        <input name="number" class="formulario" type="text" />
-        <p>Andar do Quarto:</p>
-        <input name="floor" class="formulario" type="number" />
-        <p>Preço por noite:</p>
-        <input name="price" class="formulario" type="number" />
-        <div class="butoes">
-          <button type="button" class="cancelar" id="cancelar">Cancelar</button>
-          <input class="criar" type="submit" value="Criar" />
-        </div>
-      </form>
-    </section>
-  </section>
 
+  <div
+    class="modal fade"
+    id="addRoom"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" class="modal_container">
+          <h2 class="modal-title fs-5" id="exampleModalLabel">Adicionar novo
+            quarto</h2>
+        </div>
+        <div class="modal-body">
+          <form action="/hotel/rooms" method="POST">
+            <div class="mb-3">
+              <label for="number" class="col-form-label">Número:</label>
+              <input
+                type="number"
+                name="number"
+                class="form-control"
+                id="recipient-name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="floor" class="col-form-label">Andar do Quarto:</label>
+              <input
+                type="number"
+                name="floor"
+                class="form-control"
+                id="recipient-name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="price" class="col-form-label">Preço por noite:</label>
+              <input
+                type="number"
+                name="price"
+                class="form-control"
+                id="recipient-name"
+              />
+            </div>
+            <div class="d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >Cancelar</button>
+              <button type="submit" class="btn btn-primary">Criar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="addReserve"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Este Quarto já
+            está ocupado.</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div
+            class="alert alert-danger d-flex align-items-center"
+            role="alert"
+          >
+            <div>
+              Apenas em quartos desocupados reservas podem ser criadas.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
