@@ -11,6 +11,7 @@ body {
   width: 100%;
   display: flex;
   background-image: url("../images/Background.png");
+  background-size: cover;
 }
 
 .lado_esquerdo {
@@ -26,7 +27,7 @@ body {
   height: 10%;
 }
 
-.title img{
+.title img {
   height: 80px;
 }
 
